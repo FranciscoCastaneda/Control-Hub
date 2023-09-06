@@ -1,4 +1,6 @@
-﻿namespace ControlHub.WebApi.BusinessLogic.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace ControlHub.WebApi.BusinessLogic.Interfaces
 {
     public interface IFibonacciBusinessLogic
     {
@@ -7,6 +9,6 @@
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public int GetFibonacciByIndex(int index);
+        public Task<int> GetFibonacciByIndex(int index);
     }
 }

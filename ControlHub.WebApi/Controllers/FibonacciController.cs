@@ -18,6 +18,11 @@ namespace ControlHub.WebApi.Controllers
             this.logic = logic;
         }
 
+        /// <summary>
+        /// Método para calcular el numero Fibonacci a partir de un numero proporcionado
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Get(int index)
         {
@@ -26,7 +31,7 @@ namespace ControlHub.WebApi.Controllers
                 if (index == default)
                     return StatusCode(StatusCodes.Status400BadRequest, "Parametro de entrada 'index' es necesario para procesar la solicitud.");
 
-                var output = logic.GetFibonacciByIndex(index);
+                var output = await logic.GetFibonacciByIndex(index);
 
                 return Ok(new FibonacciResponse
                 {

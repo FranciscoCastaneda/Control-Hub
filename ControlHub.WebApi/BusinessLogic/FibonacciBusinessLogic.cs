@@ -1,4 +1,5 @@
 ﻿using ControlHub.WebApi.BusinessLogic.Interfaces;
+using System.Threading.Tasks;
 
 namespace ControlHub.WebApi.BusinessLogic
 {
@@ -11,7 +12,7 @@ namespace ControlHub.WebApi.BusinessLogic
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public int GetFibonacciByIndex(int index)
+        public async Task<int> GetFibonacciByIndex(int index)
         {
             return Fibonacci(index);
         }

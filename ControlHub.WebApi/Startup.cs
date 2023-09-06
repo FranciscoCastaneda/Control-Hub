@@ -26,6 +26,7 @@ namespace ControlHub
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Control Hub", Version = "v1" });
             });
+
             services.AddSingleton<IFibonacciBusinessLogic, FibonacciBusinessLogic>();
         }
 
